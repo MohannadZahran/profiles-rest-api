@@ -49,7 +49,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         """Retrieve short name of the user"""
         return self.name
 
-# Recommanded for dhango models
+# Recommended for django models
     def ___srt__(self):
         """Return string representation of our user"""
         return self.email
