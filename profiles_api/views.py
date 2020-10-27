@@ -1,21 +1,18 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import authentication, permissions
-from django.contrib.auth.models import User
 
-class ListUsers(APIView):
-    """
-    View to list all users in the system.
 
-    * Requires token authentication.
-    * Only admin users are able to access this view.
-    """
-    authentication_classes = [authentication.TokenAuthentication]
-    permission_classes = [permissions.IsAdminUser]
+class HelloApiView(APIView):
+    """Test API View"""
 
     def get(self, request, format=None):
-        """
-        Return a list of all users.
-        """
-        usernames = [user.username for user in User.objects.all()]
-        return Response(usernames)
+        """Returns a list of APIView features"""
+
+        an_apiview = [
+            'Uses HTTP methods as functions (get, post, patch, put, delete)',
+            'Is similar to a traditional Django View',
+            'Gives you the most control over your logic',
+            'Is mapped manually to URLs',
+        ]
+
+        return Response({'message': 'Hello!', 'an_apiview': an_apiview})
