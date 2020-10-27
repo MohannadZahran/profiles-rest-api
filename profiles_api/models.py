@@ -13,7 +13,7 @@ class UserProfileManager(BaseUserManager):
             raise ValueError('User must be email address')
 
         email = self.normalize_email(email)
-        user = self.model(email=email, nsme=name)
+        user = self.model(email=email, name=name)
 
         user.set_password(password)
         user.save(using=self._db)
@@ -26,7 +26,7 @@ class UserProfileManager(BaseUserManager):
 
         user.is_superuser = True
         user.is_staff = True
-        user.save(using-self._db)
+        user.save(using=self._db)
 
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
