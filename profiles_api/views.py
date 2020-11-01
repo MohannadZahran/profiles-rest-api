@@ -34,15 +34,15 @@ class HelloApiView(APIView):
             )
 
     def put(self, request, pk=None):
-        """Handle updating an opject"""
+        """Handle updating an object"""
         return Response({'mothed': 'PUT'})
 
     def patch(self, request, pk=None):
-        """Handle a partial update of an opject"""
+        """Handle a partial update of an object"""
         return Response({'mothed': 'PATCH'})
 
     def delete(self, request, pk=None):
-        """Delete an opject"""
+        """Delete an object"""
         return Response({'mothed': 'DELETE'})
 
 class HelloViewSet(viewsets.ViewSet):
